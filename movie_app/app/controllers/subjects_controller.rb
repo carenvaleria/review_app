@@ -1,6 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /subjects
   # GET /subjects.json
   def index
@@ -24,7 +25,7 @@ class SubjectsController < ApplicationController
   # POST /subjects
   # POST /subjects.json
   def create
-    @subject = Subject.new(subject_params)
+    @subject = Subject.new(subject_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @subject.save
@@ -69,6 +70,6 @@ class SubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
-      params.require(:subject).permit(:name, :synopsis, :year, :genre, :user_id)
+      params.require(:subject).permit(:name, :synopsis, :year, :genre)
     end
 end
