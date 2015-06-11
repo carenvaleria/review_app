@@ -16,6 +16,7 @@
   <tbody>
     <% @subjects.each do |subject| %>
       <tr>
+        <td><%= image_tag subject.image.url(:medium) %></td>
         <td><%= subject.name %></td>
         <td><%= subject.synopsis %></td>
         <td><%= subject.year %></td>
