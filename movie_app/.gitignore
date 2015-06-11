@@ -11,3 +11,4 @@
 /log/*
 !/log/.keep
 /tmp
+movie_app/public/system/subjects/images/
