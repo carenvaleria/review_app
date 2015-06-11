@@ -151,3 +151,26 @@ img {
 .p:hover {
   color:red;
 }
+
+input {
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+a {
+  margin: 20px;
+}
+
+.crud {
+  margin: -20px;
+  text-decoration: none;
+  color: black;
+}
+
+.crud:hover {
+  opacity: .7;
+}
+
+#subject_image {
+  margin-left: 340px;
+}
