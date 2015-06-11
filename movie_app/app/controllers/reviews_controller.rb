@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /reviews
   # GET /reviews.json
@@ -14,6 +15,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
+    @subject = Subject.find(params[:subject_id])
     @review = Review.new
   end
 
@@ -24,11 +26,11 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
+    @review = Review.new(review_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
+        format.html { redirect_to subject_path(@review.subject_id), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
@@ -69,6 +71,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title, :review, :user_id, :subject_id)
+      params.require(:review).permit(:title, :review, :subject_id)
     end
 end
