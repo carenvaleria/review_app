@@ -1,6 +1,6 @@
 == README
 
-WELCOME, KRITIQUE!
+WELCOME, KRITIQUE!!
 A movie, tv show, book, review app! This app was made to fulfill the GA-project requirements of wdi-atx-austin 2015!
 
 * Ruby version: ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-darwin14.0]
