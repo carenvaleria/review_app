@@ -8,6 +8,8 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
+
+<div class="border">
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -126,5 +128,6 @@
 <%= render 'layouts/header'%>
 <%= yield %>
 <%= render 'layouts/footer'%>
+</div>
 </body>
 </html>

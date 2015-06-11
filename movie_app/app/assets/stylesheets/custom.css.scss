@@ -1,18 +1,65 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
-body {
-  background-color: Wheat;
-  color: #333;
-  font-family: Futurist Fixed-width;
-  font-size: 13px;
-  line-height: 18px;
+
+html {
+	height: 100%;
 }
 
-p, ol, ul, td {
+body {
+	height: 100%;
+}
+
+.border {
+	border-style: solid;
+	border-color: black;
+	border-width: 10px;
+	margin: 0 auto;
+	text-align: center;
+	max-height: 100%;
+	width: 90%;
+	padding: 10%;
+	margin-top: 5%;
+}
+
+.button {
+	background-color: white;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	font-size:17px;
+	padding:10px 20px;
+	margin: 20px 20px;
+	text-decoration:none;
+	font-family: 'Didact Gothic', sans-serif;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.button:hover {
+	background-color: black;
+	color: white;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  text-align: center;
+}
+
+p, ol, ul, td {
+  font-family: lato, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
 }
 
 pre {
@@ -21,6 +68,9 @@ pre {
   font-size: 11px;
 }
 
+h1{
+	font-family: lato, sans-serif;
+}
 a {
   color: #000;
   &:visited {
@@ -32,11 +82,23 @@ a {
   }
 }
 
+p{
+	text-align: center;
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
 }
+
+.col-lg-12{
+	
+
+}
+/*tbody{
+	margin-left: 30%;
+}*/
 
 #notice {
   color: green;
@@ -64,9 +126,11 @@ div {
     margin-bottom: 0px;
     background-color: #c00;
     color: #fff;
+    font-family: 'Didact Gothic', sans-serif;
   }
   ul li {
     font-size: 12px;
     list-style: square;
   }
 }
+
